@@ -20,11 +20,11 @@
         
         <form>
             <label for="">Título</label>
-            <input type="text" required>
+            <input type="text" id="titulo" required>
             <label for="">Linguagem/Skill</label>
-            <input type="text" required>
+            <input type="text"  id="linguagem" required>
             <label for="">Categoria</label>
-            <select name="categorias" id="categorias" required>
+            <select name="categorias" id="categoria" required>
                 <option value=""></option>
                 <option value="FrontEnd">FrontEnd</option>
                 <option value="BackEnd">BackEnd</option>
@@ -32,16 +32,52 @@
                 <option value="Comportamental/Soft">Comportamental/Soft</option>
             </select>
             <label for="">Descrição</label>
-            <textarea name="" id="" cols="30" rows="10" required></textarea>
+            <textarea name="" id="descricao" cols="30" rows="10" required></textarea>
             <label for="">Video do YouTube</label>
-            <input type="text" required>
-            <button id="limpar" type="reset">Limpar</button>
-            <button id="salvar" type="submit">Salvar</button>
+            <input type="text" id="link" required>
+            <button id="clean" type="reset">Limpar</button>
+            <button id="save" type="submit">Salvar</button>
         </form>
         
     </aside>
     <main>
+        <section>
+            <div id="somatorios">
+                <div>
+                    <h3>Total</h3>
+                    <p></p>
+                </div>
+                <div>
+                    <h3>FrontEnd</h3>
+                    <p></p>
+                </div>
+                <div>
+                    <h3>BackEnd</h3>
+                    <p></p>
+                </div>
+                <div>
+                    <h3>FullStack</h3>
+                    <p></p>
+                </div>
+                <div>
+                    <h3>SoftSkill</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div>
+                <input type="text" placeholder="Digite um titulo para buscar">
+                <button>Pesquisa</button>
+                <button>Reset</button>
+            </div>
+            
+        </section>
+        <section>
+            <ul id="cards">
 
+            </ul>
+
+        </section>
+        
     </main>
 </body>
 </html>

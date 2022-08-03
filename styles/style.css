@@ -1,11 +1,65 @@
+
+body{
+    display: flex;
+}
 aside{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid red;
+    height: 550px;
+}
+main{
+    height: 550px;
+    width: 460px;
+    border: 2px solid blue;
 }
 
 form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+#somatorios{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#somatorios div{
+    width: 20%;
+    display: flex;
+    border: 1px black solid;
+    flex-direction: column;
+    text-align: center;
+}
+
+h3{
+    font-size: 15px;
+}
+
+ul{
+    border: 1px solid green;
+    height: 430px;
+    overflow-y: scroll;
+    display: flex;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 400px;
+    border: 1px solid red;
+    list-style: none;
+}
+
+li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
 }
