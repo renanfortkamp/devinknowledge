@@ -24,57 +24,82 @@ save.addEventListener('click', function(){
   
 })
 
+const somatorios = ()=>{
+    let frontEnd = 0;
+    let backEnd = 0;
+    let fullStack = 0;
+    let softSkill = 0;
+
+    for(let i = 0; i < cardList.length; i++) {
+        if(cardList[i].categoria == 'FrontEnd'){
+            frontEnd += 1
+        }
+        if(cardList[i].categoria == 'BackEnd'){
+            backEnd += 1
+        }
+        if(cardList[i].categoria == 'FullStack'){
+            fullStack += 1
+        }
+        if(cardList[i].categoria == 'Comportamental/Soft'){
+            softSkill += 1
+        }
+    }
+    let total = frontEnd + backEnd + fullStack + softSkill;
+    document.getElementById('total').innerText = total;
+    document.getElementById('frontEnd').innerText = frontEnd;
+    document.getElementById('backEnd').innerText = backEnd;
+    document.getElementById('fullStack').innerText = fullStack;
+    document.getElementById('softSkill').innerText = softSkill;
+
+
+}
+
 const createCard = ()=>{
     document.querySelector('ul').innerHTML = "";
     document.querySelectorAll("input").value = "";
   for(let i= 0 ; i < cardList.length; i++){
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-
+    // --------------
     let div1 = document.createElement('div');
     let titulo = document.createElement('label');
     titulo.innerText = `${cardList[i].titulo}`
-
+        ul.appendChild(li);
+        li.appendChild(div1); 
+        div1.appendChild(titulo)
+    //---------------    
     let div2 = document.createElement('div');
     let linguagem = document.createElement('label');
     linguagem.innerText = 'Linguagem:'
     let p2 = document.createElement('p');
     p2.innerText = `${cardList[i].linguagem}`;
-
+        li.appendChild(div2);
+        div2.appendChild(linguagem)
+        div2.appendChild(p2)
+    //--------------- 
     let div3 = document.createElement('div');
     let categoria = document.createElement('label');
     categoria.innerText = 'Categoria:'
     let p3 = document.createElement('p');
-    p3.innerText = `${cardList[i].titulo}`;
-
+    p3.innerText = `${cardList[i].categoria}`;
+        li.appendChild(div3);
+        div3.appendChild(categoria)
+        div3.appendChild(p3)
+    //--------------- 
     let div4 = document.createElement('div');
     let descricao = document.createElement('label');
     descricao.innerText = "Descrição:"
     let p4= document.createElement('p');
     p4.innerText = `${cardList[i].titulo}`;
-
+        li.appendChild(div4);
+        div4.appendChild(descricao)
+        div4.appendChild(p4)
+    //--------------- 
     let editar = document.createElement('button');
-
-
     let botaoVideo = document.createElement('button');
-
     let link = document.createElement('a');
-      ul.appendChild(li);
-      li.appendChild(div1); 
-      div1.appendChild(titulo)
-
-      li.appendChild(div2);
-      div2.appendChild(linguagem)
-      div2.appendChild(p2)
-
-      li.appendChild(div3);
-      div3.appendChild(categoria)
-      div3.appendChild(p3)
-      
-      li.appendChild(div4);
-      div4.appendChild(descricao)
-      div4.appendChild(p4)
-      createDeleteButton(i,li);
+    createDeleteButton(i,li);
+    somatorios()
   }}
 
 const createDeleteButton = (i,li) =>{

@@ -11,7 +11,7 @@ aside{
 }
 main{
     height: 550px;
-    width: 460px;
+    width: 500px;
     border: 2px solid blue;
 }
 
@@ -45,16 +45,21 @@ ul{
     height: 430px;
     overflow-y: scroll;
     display: flex;
+    flex-wrap: wrap;
+    padding-right: 30px;
+    background-color: black;
 }
 
 li{
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 250px;
-    width: 400px;
+    height: 213px;
+    width: 200px;
     border: 1px solid red;
     list-style: none;
+    margin: 1px;
 }
 
 li div{
