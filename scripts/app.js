@@ -45,7 +45,17 @@ const save = ()=>{
         saveStorage();
 }}
 }
-  
+//--------------------------------------------
+
+const pesquisaButton = document.getElementById('pesquisaButton')
+pesquisaButton.addEventListener('click',()=>{
+  let pesquisaValue = document.getElementById('pesquisa').value
+  let pesquisaLower = pesquisaValue.toLowerCase()
+  let cardFiltrados = cardList.filter(item => item.titulo.toLowerCase().includes(pesquisaLower));
+  cardFiltrados.forEach(item => { 
+    console.log(item)});
+
+})  
 
 //---------------------------------------------
 
