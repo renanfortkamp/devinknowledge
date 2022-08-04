@@ -4,7 +4,6 @@ form.addEventListener('submit', event => {
 });
 
 
-/* variavel abaixo responsavel por armazenar as tarefas */
 const cardList = new Array();
 const titulo = document.getElementById('titulo')
 const linguagem = document.getElementById('linguagem')
@@ -12,7 +11,7 @@ const categoria = document.getElementById('categoria')
 const descricao = document.getElementById('descricao')
 const link = document.getElementById('link')
 
-//---------------------------------------------
+//---------------SALVA OS DADOS DO FORMULARIO NO ARRAY------------------------------
 
 
 const saveButton = document.getElementById('save')
@@ -28,7 +27,7 @@ const save = ()=>{
       cardEdit.categoria = categoria.value
       cardEdit.descricao = descricao.value
       cardEdit.link = link.value
-      createCard();
+      createCard(cardList);
       saveStorage();  
     }else{
         if(
@@ -41,23 +40,31 @@ const save = ()=>{
         ){
         cardList.push({titulo:titulo.value,linguagem:linguagem.value,categoria:categoria.value,descricao:descricao.value,link:link.value});
         titulo.className = 'noEdit'
-        createCard();
+        createCard(cardList);
         saveStorage();
 }}
 }
-//--------------------------------------------
+//---------------PESQUISA ALGO APARTIR DOS TITULOS-----------------------------
 
 const pesquisaButton = document.getElementById('pesquisaButton')
 pesquisaButton.addEventListener('click',()=>{
   let pesquisaValue = document.getElementById('pesquisa').value
   let pesquisaLower = pesquisaValue.toLowerCase()
+  if(pesquisaValue != ''){
   let cardFiltrados = cardList.filter(item => item.titulo.toLowerCase().includes(pesquisaLower));
-  cardFiltrados.forEach(item => { 
-    console.log(item)});
+  createCard(cardFiltrados)
+  }
 
-})  
+  
+})
 
-//---------------------------------------------
+const resetPesquisa = document.getElementById('resetPesquisa');
+resetPesquisa.addEventListener('click',()=>{
+  document.getElementById('pesquisa').value = ''
+  createCard(cardList)
+})
+
+//--------------MOSTRA O SOMATORIOS DAS CATEGORIAS-------------------------------
 
 
 const somatorios = ()=>{
@@ -88,20 +95,20 @@ const somatorios = ()=>{
 
 }
 
-//---------------------------------------------
+//------------CRIA OS CARTÕES APARTIR DO ARRAY CHAMADO---------------------------------
 
-const createCard = ()=>{
+const createCard = (arr)=>{
     document.querySelector('ul').innerHTML = "";
     document.querySelectorAll("input").value = "";
-  for(let i= 0 ; i < cardList.length; i++){
+  for(let i= 0 ; i < arr.length; i++){
     
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    let thisTitulo = cardList[i].titulo
-    let thislinguagem = cardList[i].linguagem
-    let thisCategoria = cardList[i].categoria
-    let thisDescricao = cardList[i].descricao
-    let thisLink = cardList[i].link
+    let thisTitulo = arr[i].titulo
+    let thislinguagem = arr[i].linguagem
+    let thisCategoria = arr[i].categoria
+    let thisDescricao = arr[i].descricao
+    let thisLink = arr[i].link
     // ----
     let div1 = document.createElement('div');
     let titulo = document.createElement('label');
@@ -180,32 +187,34 @@ const createCard = ()=>{
 }
 
 
-//---------------------------------------------
+//-------------DELETA O CARTÃO--------------------------------
 
 const deleteThiscard = (i) =>{
   let erase = window.confirm("Você deseja realmente excluir este card?");
   if(erase == true){
     cardList.splice(i,1);
     saveStorage();
-    createCard();
+    createCard(cardList);
 
   }
 }
 
-//---------------------------------------------
+//-------------DELETA TODOS OS CARTÕES--------------------------------
 
   const dellAll = document.getElementById("del")
   dellAll.addEventListener('click', ()=>{
-    let eraseAll = window.confirm('Você deseja realmente excluir todas as tarefas?');
-    if(eraseAll == true){
+    if(cardList.length > 0){
+      let eraseAll = window.confirm('Você deseja realmente excluir todas as tarefas?');
+      if(eraseAll == true){
       cardList.splice(0,cardList.length);
       somatorios();
       saveStorage();
-      createCard();
+      createCard(cardList);
+    }
     }
   })
 
-//---------------------------------------------
+//-------------SALVA NO LOCAL STORAGE--------------------------------
 
 const saveStorage = () =>{
   localStorage.removeItem('cardList')
@@ -213,7 +222,7 @@ const saveStorage = () =>{
   localStorage.setItem('cardList', list)
 }
 
-//---------------------------------------------
+//-------------CARREGA APARTIR DO LOCAL STORAGE--------------------------------
 
 const loadStorage = () =>{
   const local_storage = JSON.parse(localStorage.getItem('cardList'));
@@ -222,7 +231,7 @@ const loadStorage = () =>{
     for(let i=0; i < local_storage.length;i++){
       cardList.push(local_storage[i])
     }
-    createCard();
+    createCard(cardList);
   }
 }
 
