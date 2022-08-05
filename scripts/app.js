@@ -28,7 +28,13 @@ const save = ()=>{
       cardEdit.descricao = descricao.value
       cardEdit.link = link.value
       createCard(cardList);
-      saveStorage();  
+      saveStorage();
+      titulo.value = ''
+      linguagem.value = ''
+      categoria.value = ''
+      descricao.value = ''
+      link.value = ''
+      titulo.className = 'noEdit'  
     }else{
         if(
           titulo.value !=''
@@ -38,10 +44,20 @@ const save = ()=>{
           && link.value !=''
 
         ){
-        cardList.push({titulo:titulo.value,linguagem:linguagem.value,categoria:categoria.value,descricao:descricao.value,link:link.value});
+        cardList.push({
+          titulo:titulo.value,
+          linguagem:linguagem.value,
+          categoria:categoria.value,
+          descricao:descricao.value,
+          link:link.value});
         titulo.className = 'noEdit'
         createCard(cardList);
         saveStorage();
+        titulo.value = ''
+        linguagem.value = ''
+        categoria.value = ''
+        descricao.value = ''
+        link.value = ''
 }}
 }
 //---------------PESQUISA ALGO APARTIR DOS TITULOS-----------------------------
@@ -109,14 +125,14 @@ const createCard = (arr)=>{
     let thisCategoria = arr[i].categoria
     let thisDescricao = arr[i].descricao
     let thisLink = arr[i].link
-    // ----
+    // ----Titulo
     let div1 = document.createElement('div');
     let titulo = document.createElement('label');
     titulo.innerText = `${thisTitulo}`
         ul.appendChild(li);
         li.appendChild(div1); 
         div1.appendChild(titulo)
-    //----   
+    //----Linguagem   
     let div2 = document.createElement('div');
     let linguagem = document.createElement('label');
     linguagem.innerText = 'Linguagem:'
@@ -125,7 +141,7 @@ const createCard = (arr)=>{
         li.appendChild(div2);
         div2.appendChild(linguagem)
         div2.appendChild(p2)
-    //-----
+    //-----Categoria
     let div3 = document.createElement('div');
     let categoria = document.createElement('label');
     categoria.innerText = 'Categoria:'
@@ -134,13 +150,13 @@ const createCard = (arr)=>{
         li.appendChild(div3);
         div3.appendChild(categoria)
         div3.appendChild(p3)
-    //-----
+    //-----Descrição
     let div4 = document.createElement('div');
     let descricao = document.createElement('p');
     descricao.innerText = `${thisDescricao}`
         li.appendChild(div4);
         div4.appendChild(descricao)
-    //-------
+    //-----Botoes Edit Dele e
     let deletecard = document.createElement('button');
     deletecard.innerText = 'Deletar'
     li.appendChild(deletecard);
@@ -149,9 +165,7 @@ const createCard = (arr)=>{
         deletecard.addEventListener('click', ()=>{
             deleteThiscard(i);
           } 
-        )
-
-    //------      
+        )    
 
     let div5 = document.createElement('div')
     let editar = document.createElement('button');
@@ -165,10 +179,7 @@ const createCard = (arr)=>{
         document.getElementById('descricao').value = thisDescricao;
         document.getElementById('link').value = thisLink;
         document.getElementById('titulo').className = i; 
-      } 
-    }
-      
-    )
+      }})
 
     let botaoVideo = document.createElement('button');
     let link = document.createElement('a');
@@ -182,7 +193,7 @@ const createCard = (arr)=>{
     div5.appendChild(deletecard)
     div5.appendChild(botaoVideo)
     somatorios()
-    
+    //----------
   }
 }
 
@@ -210,6 +221,7 @@ const deleteThiscard = (i) =>{
       somatorios();
       saveStorage();
       createCard(cardList);
+      titulo.className = 'noEdit' 
     }
     }
   })

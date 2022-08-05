@@ -1,6 +1,7 @@
 
-body{
+#conteiner{
     display: flex;
+    justify-content: center;
 }
 aside{
     display: flex;
