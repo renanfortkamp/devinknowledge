@@ -3,16 +3,12 @@ form.addEventListener('submit', event => {
   event.preventDefault();
 });
 
-
 const cardList = new Array();
 const titulo = document.getElementById('titulo')
 const linguagem = document.getElementById('linguagem')
 const categoria = document.getElementById('categoria')
 const descricao = document.getElementById('descricao')
 const link = document.getElementById('link')
-
-//---------------SALVA OS DADOS DO FORMULARIO NO ARRAY------------------------------
-
 
 const saveButton = document.getElementById('save')
 saveButton.addEventListener('click', function(){
@@ -58,30 +54,24 @@ const save = ()=>{
         categoria.value = ''
         descricao.value = ''
         link.value = ''
-}}
+        }}
 }
-//---------------PESQUISA ALGO APARTIR DOS TITULOS-----------------------------
 
-const pesquisaButton = document.getElementById('pesquisaButton')
-pesquisaButton.addEventListener('click',()=>{
+const pesquisaCards = document.getElementById('pesquisaButton')
+pesquisaCards.addEventListener('click',()=>{
   let pesquisaValue = document.getElementById('pesquisa').value
   let pesquisaLower = pesquisaValue.toLowerCase()
   if(pesquisaValue != ''){
   let cardFiltrados = cardList.filter(item => item.titulo.toLowerCase().includes(pesquisaLower));
   createCard(cardFiltrados)
-  }
+  }}
+)
 
-  
-})
-
-const resetPesquisa = document.getElementById('resetPesquisa');
-resetPesquisa.addEventListener('click',()=>{
+const resetaPesquisa = document.getElementById('resetPesquisa');
+resetaPesquisa.addEventListener('click',()=>{
   document.getElementById('pesquisa').value = ''
   createCard(cardList)
 })
-
-//--------------MOSTRA O SOMATORIOS DAS CATEGORIAS-------------------------------
-
 
 const somatorios = ()=>{
     let frontEnd = 0;
@@ -98,107 +88,79 @@ const somatorios = ()=>{
           break;
         case 'softSkill': softSkill +=1;
           break;
-      }  
-
-    }
+      }}
     let total = frontEnd + backEnd + fullStack + softSkill;
     document.getElementById('total').innerText = total;
     document.getElementById('frontEnd').innerText = frontEnd;
     document.getElementById('backEnd').innerText = backEnd;
     document.getElementById('fullStack').innerText = fullStack;
     document.getElementById('softSkill').innerText = softSkill;
-
-
 }
-
-//------------CRIA OS CARTÕES APARTIR DO ARRAY CHAMADO---------------------------------
 
 const createCard = (arr)=>{
     document.querySelector('ul').innerHTML = "";
     document.querySelectorAll("input").value = "";
   for(let i= 0 ; i < arr.length; i++){
-    
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    let thisTitulo = arr[i].titulo
-    let thislinguagem = arr[i].linguagem
-    let thisCategoria = arr[i].categoria
-    let thisDescricao = arr[i].descricao
-    let thisLink = arr[i].link
-    // ----Titulo
-    let div1 = document.createElement('div');
-    let titulo = document.createElement('label');
-    titulo.innerText = `${thisTitulo}`
-        ul.appendChild(li);
-        li.appendChild(div1); 
-        div1.appendChild(titulo)
-    //----Linguagem   
-    let div2 = document.createElement('div');
-    let linguagem = document.createElement('label');
-    linguagem.innerText = 'Linguagem:'
-    let p2 = document.createElement('p');
-    p2.innerText = `${thislinguagem}`;
-        li.appendChild(div2);
-        div2.appendChild(linguagem)
-        div2.appendChild(p2)
-    //-----Categoria
-    let div3 = document.createElement('div');
-    let categoria = document.createElement('label');
-    categoria.innerText = 'Categoria:'
-    let p3 = document.createElement('p');
-    p3.innerText = `${thisCategoria}`;
-        li.appendChild(div3);
-        div3.appendChild(categoria)
-        div3.appendChild(p3)
-    //-----Descrição
-    let div4 = document.createElement('div');
-    let descricao = document.createElement('p');
-    descricao.innerText = `${thisDescricao}`
-        li.appendChild(div4);
-        div4.appendChild(descricao)
-    //-----Botoes Edit Dele e
-    let deletecard = document.createElement('button');
-    deletecard.innerText = 'Deletar'
-    li.appendChild(deletecard);
-      deletecard.name = "deletecard"
-      deletecard.classList.add('deletecard');   
-        deletecard.addEventListener('click', ()=>{
-            deleteThiscard(i);
-          } 
-        )    
-
-    let div5 = document.createElement('div')
-    let editar = document.createElement('button');
-    editar.innerText="Ed"
-    editar.addEventListener('click',()=>{
-      let edit = window.confirm("Você deseja editar este card ?");
-      if(edit == true){
-        document.getElementById('titulo').value = thisTitulo;
-        document.getElementById('linguagem').value = thislinguagem
-        document.getElementById('categoria').value = thisCategoria;
-        document.getElementById('descricao').value = thisDescricao;
-        document.getElementById('link').value = thisLink;
-        document.getElementById('titulo').className = i; 
-      }})
-
-    let botaoVideo = document.createElement('button');
+    let h2 = document.createElement('h2')
+    let div1 = document.createElement('div')
+    div1.id = 'div1'
+    let div2 = document.createElement('div')
+    div2.id = 'div2'
+    let p1 = document.createElement('p')
+    let p2 = document.createElement('p')
+    let p3 = document.createElement('p')
+    let btnDelete = document.createElement('button')
+    let btnEditar = document.createElement('button')
+    let btnVideo =document.createElement('button')
     let link = document.createElement('a');
-    link.href = thisLink
-    link.target ='_blank'
-    link.rel="noopener noreferrer"
-    link.innerText ="VID"
-    li.appendChild(div5)
-    botaoVideo.appendChild(link)
-    div5.appendChild(editar)
-    div5.appendChild(deletecard)
-    div5.appendChild(botaoVideo)
+    ul.appendChild(li);
+    li.appendChild(h2);
+      h2.innerText = `${arr[i].titulo}`
+    li.appendChild(div1);
+    div1.appendChild(p1);
+      p1.innerText = `Linguagem:${arr[i].linguagem}`
+    div1.appendChild(p2) 
+      p2.innerText = `Categoria:${arr[i].categoria}`
+    div1.appendChild(p3) 
+      p3.innerText = `${arr[i].descricao}`
+    li.appendChild(div2); 
+    div2.appendChild(btnDelete)
+      btnDelete.innerText = 'Deletar'
+        btnDelete.name = "deletecard"
+        btnDelete.classList.add('deletecard');   
+          btnDelete.addEventListener('click', ()=>{
+              deleteThiscard(i);
+          })   
+    div2.appendChild(btnEditar)
+      btnEditar.innerText="Ed"
+      btnEditar.id = 'edit'
+      btnEditar.addEventListener('click',()=>{
+        editThisCard(i)
+      })
+    div2.appendChild(btnVideo)
+      btnVideo.appendChild(link)
+        link.href = arr[i].link
+        link.target ='_blank'
+        link.rel="noopener noreferrer"
+        link.innerText ="VID" 
     somatorios()
-    //----------
+
   }
 }
 
-
-//-------------DELETA O CARTÃO--------------------------------
+const editThisCard = (i)=>{
+  let edit = window.confirm("Você deseja editar este card ?");
+  if(edit == true){
+    titulo.value = cardList[i].titulo
+    linguagem.value = cardList[i].linguagem;
+    categoria.value = cardList[i].categoria;
+    descricao.value = cardList[i].descricao;
+    link.value = cardList[i].link;
+    document.getElementById('titulo').className = i; 
+  }
+}
 
 const deleteThiscard = (i) =>{
   let erase = window.confirm("Você deseja realmente excluir este card?");
@@ -206,13 +168,10 @@ const deleteThiscard = (i) =>{
     cardList.splice(i,1);
     saveStorage();
     createCard(cardList);
-
   }
 }
 
-//-------------DELETA TODOS OS CARTÕES--------------------------------
-
-  const dellAll = document.getElementById("del")
+const dellAll = document.getElementById("del")
   dellAll.addEventListener('click', ()=>{
     if(cardList.length > 0){
       let eraseAll = window.confirm('Você deseja realmente excluir todas as tarefas?');
@@ -222,19 +181,16 @@ const deleteThiscard = (i) =>{
       saveStorage();
       createCard(cardList);
       titulo.className = 'noEdit' 
+      }
     }
-    }
-  })
-
-//-------------SALVA NO LOCAL STORAGE--------------------------------
+  }
+)
 
 const saveStorage = () =>{
   localStorage.removeItem('cardList')
   let list = JSON.stringify(cardList);
   localStorage.setItem('cardList', list)
 }
-
-//-------------CARREGA APARTIR DO LOCAL STORAGE--------------------------------
 
 const loadStorage = () =>{
   const local_storage = JSON.parse(localStorage.getItem('cardList'));
@@ -246,5 +202,4 @@ const loadStorage = () =>{
     createCard(cardList);
   }
 }
-
 loadStorage();

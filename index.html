@@ -20,24 +20,37 @@
             </div>
             
             <form>
-                <label for="" >Título</label>
-                <input type="text" id="titulo" class="noEdit" required>
-                <label for="">Linguagem/Skill</label>
-                <input type="text"  id="linguagem" required>
-                <label for="">Categoria</label>
-                <select name="categorias" id="categoria" required>
-                    <option value=""></option>
-                    <option value="FrontEnd">FrontEnd</option>
-                    <option value="BackEnd">BackEnd</option>
-                    <option value="FullStack">FullStack </option>
-                    <option value="Comportamental/Soft">Comportamental/Soft</option>
-                </select>
-                <label for="">Descrição</label>
-                <textarea name="" id="descricao" cols="30" rows="10" required></textarea>
-                <label for="">Video do YouTube</label>
-                <input type="text" id="link"  required>
-                <button id="clean" type="reset">Limpar</button>
-                <button id="save" type="submit">Salvar</button>
+                
+                    <label for="" >Título</label>
+                    <input type="text" id="titulo" class="noEdit" required>
+                                
+                    <label for="">Linguagem/Skill</label>
+                    <input type="text"  id="linguagem" required>
+                                
+                    <label for="">Categoria</label>
+                    <select name="categorias" id="categoria" required>
+                        <option value=""></option>
+                        <option value="FrontEnd">FrontEnd</option>
+                        <option value="BackEnd">BackEnd</option>
+                        <option value="FullStack">FullStack </option>
+                        <option value="Comportamental/Soft">Comportamental/Soft</option>
+                    </select>
+                               
+                    <label for="">Descrição</label>
+                    <textarea name="" id="descricao" cols="30" rows="10" required></textarea>
+                                
+                    <label for="">Video do YouTube</label>
+                    <input type="url" id="link"  required>
+                
+                <div>
+                    <button id="clean" type="reset">Limpar</button>
+                    <button id="save">Salvar</button>
+
+                </div>
+            
+                
+                
+                
             </form>
             
         </aside>
@@ -65,7 +78,7 @@
                         <p id="softSkill"></p>
                     </div>
                 </div>
-                <div>
+                <div class="btn-pes-res-del">
                     <input type="text" id="pesquisa" placeholder="Digite um titulo para buscar">
                     <button id="pesquisaButton">Pesquisa</button>
                     <button id="resetPesquisa">Reset</button>
@@ -84,3 +97,5 @@
     </div>
 </body>
 </html>
+
+
