@@ -1,95 +1,98 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
-#conteiner{
-    display: flex;
-    justify-content: center;
+#conteiner {
+  display: flex;
+  justify-content: center;
 }
-aside{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid red;
-    height: 550px;
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid red;
+  height: 550px;
 }
-main{
-    height: 550px;
-    width: 500px;
-    border: 2px solid blue;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+main {
+  height: 550px;
+  width: 500px;
+  border: 2px solid blue;
 }
 
-form div{
-    display: flex;
-    justify-content: center;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
-
-#somatorios{
-    display: flex;
-    justify-content: space-around;
-    
+form div {
+  display: flex;
+  justify-content: center;
 }
 
-#somatorios div{
-    width: 20%;
-    display: flex;
-    border: 1px black solid;
-    flex-direction: column;
-    text-align: center;
+#somatorios {
+  display: flex;
+  justify-content: space-around;
 }
 
-h3{
-    font-size: 15px;
+#somatorios div {
+  width: 20%;
+  display: flex;
+  border: 1px black solid;
+  flex-direction: column;
+  text-align: center;
 }
 
-.btn-pes-res-del{
-    display: flex;
-    justify-content: center;
+h3 {
+  font-size: 15px;
 }
 
-#pesquisa{
-    width: 300px;
-    height: 30px;
+.btn-pes-res-del {
+  display: flex;
+  justify-content: center;
 }
 
-ul{
-    margin-top: 0;
-    border: 1px solid green;
-    height: 77vh;
-    overflow-y: scroll;
-    display: flex;
-    flex-wrap: wrap;
-    padding-right: 30px;
-    background-color: black;
+#pesquisa {
+  width: 300px;
+  height: 30px;
 }
 
-li{
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 213px;
-    width: 200px;
-    border: 1px solid red;
-    list-style: none;
-    margin: 1px;
+ul {
+  margin-top: 0;
+  border: 1px solid green;
+  height: 77vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  background-color: black;
 }
 
-h2{
-    font-size: 20px;
-    line-height: 5px;
+li {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 213px;
+  width: 200px;
+  border: 1px solid red;
+  list-style: none;
+  margin: 1px;
 }
 
-li .div2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid green;
+h2 {
+  font-size: 20px;
+  line-height: 5px;
+}
+
+li .div2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid green;
+}
+
+i {
+  width: 50px;
+  height: 50px;
 }
