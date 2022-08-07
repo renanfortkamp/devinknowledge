@@ -6,23 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="scripts/app.js" type="module"></script>
         <link rel="stylesheet" href="styles/style.css" />
-        <link rel="shortcut icon" href="imgs/book.png" type="image/x-icon">
+        <link rel="shortcut icon" href="imgs/book.png" type="image/x-icon" />
         <title>DEVinKnowledge</title>
     </head>
     <body>
         <div id="conteiner">
             <aside>
                 <div class="headBox">
-                    <img src="imgs/book.png" alt="" />
+                    <img src="imgs/book.png" alt="img de um livro de codigo" />
                     <div class="book">
                         <h1><span>DEVin</span>Knowledge</h1>
                         <h3>Learn, Code and Save</h3>
                     </div>
-                    
                 </div>
 
                 <form>
-                    <label for=""> Título</label>
+                    <label for="titulo"> Título</label>
                     <input
                         type="text"
                         id="titulo"
@@ -33,7 +32,7 @@
                         required
                     />
 
-                    <label for=""> Linguagem/Skill</label>
+                    <label for="linguagem"> Linguagem/Skill</label>
                     <input
                         type="text"
                         id="linguagem"
@@ -43,7 +42,7 @@
                         required
                     />
 
-                    <label for=""> Categoria</label>
+                    <label for="categoria"> Categoria</label>
                     <select name="categorias" id="categoria" required>
                         <option value="" disabled selected>
                             Selecione uma Categoria
@@ -56,9 +55,9 @@
                         </option>
                     </select>
 
-                    <label for=""> Descrição</label>
+                    <label for="descricao"> Descrição</label>
                     <textarea
-                        name=""
+                        name="descricao"
                         id="descricao"
                         minlength="32"
                         maxlength="512"
@@ -66,7 +65,7 @@
                         required
                     ></textarea>
 
-                    <label for=""> Video do YouTube</label>
+                    <label for="video do youtube"> Video do YouTube</label>
                     <input
                         type="url"
                         id="link"

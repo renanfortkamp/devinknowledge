@@ -21,7 +21,7 @@ saveButton.addEventListener("click", function () {
             save(url);
         } else {
             alert(`Link Invalido!`);
-            link.value = ''
+            link.value = "";
         }
     }
 });
