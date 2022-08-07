@@ -9,7 +9,7 @@ body {
     justify-content: center;
     height: 100vh;
 }
-.headBox{
+.headBox {
     color: white;
 }
 
@@ -27,7 +27,6 @@ aside label {
     font-size: 20px;
     padding-left: 10px;
     text-shadow: 1px 3px 3px rgba(13, 13, 13, 0.115);
-
 }
 
 aside input {
@@ -37,7 +36,6 @@ aside input {
     border-radius: 10px;
     font-size: 16px;
     box-shadow: 1px 1px 5px 1px black;
-
 }
 
 aside select {
@@ -46,7 +44,6 @@ aside select {
     border-radius: 10px;
     margin-bottom: 5px;
     box-shadow: 1px 1px 5px 1px black;
-
 }
 
 textarea:focus,
@@ -64,7 +61,6 @@ aside textarea {
     resize: none;
     margin-bottom: 5px;
     box-shadow: 1px 1px 5px 1px black;
-
 }
 aside .cleanSaveBox {
     width: 100%;
@@ -84,23 +80,19 @@ aside .cleanSaveButton {
     background-color: yellow;
     font-weight: bold;
     box-shadow: 1px 1px 5px 1px black;
-
 }
 #save {
     background-color: rgb(0, 227, 0);
     font-weight: bold;
     box-shadow: 1px 1px 5px 1px black;
-
 }
 #clean:hover {
     background-color: rgb(208, 208, 0);
     box-shadow: 1px 1px 9px 3px black;
-
 }
 #save:hover {
     background-color: rgb(1, 193, 1);
     box-shadow: 1px 1px 9px 3px black;
-
 }
 
 form {
@@ -179,8 +171,6 @@ main {
     color: white;
     cursor: pointer;
 }
-
-
 
 #pesquisa {
     font-size: 16px;

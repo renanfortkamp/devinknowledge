@@ -138,7 +138,7 @@ const createCard = (arr) => {
         li.appendChild(div1);
         li.appendChild(div2);
         h2.innerText = `${arr[i].titulo}`;
-        h2.className = 'titleCard'
+        h2.className = "titleCard";
         div1.id = "div1";
         div1.appendChild(p1);
         div1.appendChild(p2);
@@ -199,9 +199,7 @@ const deleteThiscard = (i) => {
 const dellAll = document.getElementById("del");
 dellAll.addEventListener("click", () => {
     if (cardList.length > 0) {
-        let eraseAll = window.confirm(
-            "Você deseja excluir todas as Dicas?"
-        );
+        let eraseAll = window.confirm("Você deseja excluir todas as Dicas?");
         if (eraseAll == true) {
             cardList.splice(0, cardList.length);
             somatorios();
