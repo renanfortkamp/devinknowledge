@@ -2,7 +2,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(232, 244, 248);
+    background-color: rgb(224, 230, 232);
 }
 #conteiner {
     display: flex;
@@ -11,6 +11,30 @@ body {
 }
 .headBox {
     color: white;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.headBox h3{
+    font-size: 10px;
+}
+
+.book{
+    text-align: center;
+}
+
+h1 span{
+    font-size: 15px;
+}
+
+img{
+    width: 80px;
+    height: 80px;
 }
 
 aside {
@@ -63,6 +87,7 @@ aside textarea {
     box-shadow: 1px 1px 5px 1px black;
 }
 aside .cleanSaveBox {
+    margin-top: 8px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -72,7 +97,7 @@ aside .cleanSaveButton {
     margin-top: 13px;
     border-radius: 10px;
     width: 130px;
-    height: 30px;
+    height: 35px;
     cursor: pointer;
 }
 
@@ -125,6 +150,7 @@ main {
 }
 
 #somatorios div {
+    color: rgb(17, 17, 49);
     width: 18%;
     height: 70px;
     display: flex;
@@ -195,6 +221,7 @@ ul {
 }
 
 li {
+    color: rgb(17, 17, 49);
     margin-bottom: 15px;
     background-color: rgb(253, 253, 253);
     display: flex;
@@ -212,7 +239,7 @@ h2 {
     line-height: 5px;
 }
 
-span {
+li span {
     font-size: 18px;
     font-weight: bold;
     margin-right: 10px;

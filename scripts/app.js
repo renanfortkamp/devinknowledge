@@ -17,25 +17,46 @@ saveButton.addEventListener("click", function () {
         save(url);
     } else {
         let url = link.value;
-        save(url);
+        if (validUrl(url) == true) {
+            save(url);
+        } else {
+            alert(`Link Invalido!`);
+            link.value = ''
+        }
     }
 });
 
+const validUrl = (url) => {
+    try {
+        let link = new URL(url);
+        return true;
+    } catch (err) {
+        return false;
+    }
+};
+
 const save = (url) => {
     if (titulo.className != "noEdit") {
-        let cardEdit = cardList[titulo.className];
-        cardEdit.titulo = titulo.value;
-        cardEdit.linguagem = linguagem.value;
-        cardEdit.categoria = categoria.value;
-        cardEdit.descricao = descricao.value;
-        cardEdit.link = url;
-        createCard(cardList);
-        saveStorage();
-        cleanInput();
-        titulo.className = "noEdit";
-        alert(`  SUCESSO!
+        if (
+            titulo.value != "" &&
+            linguagem.value != "" &&
+            categoria.value != "" &&
+            descricao.value != ""
+        ) {
+            let cardEdit = cardList[titulo.className];
+            cardEdit.titulo = titulo.value;
+            cardEdit.linguagem = linguagem.value;
+            cardEdit.categoria = categoria.value;
+            cardEdit.descricao = descricao.value;
+            cardEdit.link = url;
+            createCard(cardList);
+            saveStorage();
+            cleanInput();
+            titulo.className = "noEdit";
+            alert(`  SUCESSO!
 
   Dica editada da base do conhecimento!`);
+        }
     } else {
         if (
             titulo.value != "" &&
