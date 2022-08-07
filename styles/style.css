@@ -9,6 +9,10 @@ body {
     justify-content: center;
     height: 100vh;
 }
+.headBox{
+    color: white;
+}
+
 aside {
     display: flex;
     flex-direction: column;
@@ -21,21 +25,28 @@ aside {
 
 aside label {
     font-size: 20px;
+    padding-left: 10px;
+    text-shadow: 1px 3px 3px rgba(13, 13, 13, 0.115);
+
 }
 
 aside input {
     margin-bottom: 5px;
     width: 300px;
     height: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 
 aside select {
-    font-size: 16pxs;
+    font-size: 16px;
     height: 35px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 5px;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 
 textarea:focus,
@@ -47,11 +58,13 @@ select:focus {
 
 aside textarea {
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 300px;
     height: 170px;
     resize: none;
     margin-bottom: 5px;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 aside .cleanSaveBox {
     width: 100%;
@@ -61,7 +74,7 @@ aside .cleanSaveBox {
 aside .cleanSaveButton {
     font-size: 17px;
     margin-top: 13px;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 130px;
     height: 30px;
     cursor: pointer;
@@ -70,16 +83,24 @@ aside .cleanSaveButton {
 #clean {
     background-color: yellow;
     font-weight: bold;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 #save {
     background-color: rgb(0, 227, 0);
     font-weight: bold;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 #clean:hover {
     background-color: rgb(208, 208, 0);
+    box-shadow: 1px 1px 9px 3px black;
+
 }
 #save:hover {
     background-color: rgb(1, 193, 1);
+    box-shadow: 1px 1px 9px 3px black;
+
 }
 
 form {
@@ -159,8 +180,12 @@ main {
     cursor: pointer;
 }
 
+
+
 #pesquisa {
-    width: 345px;
+    font-size: 16px;
+    padding-left: 5px;
+    width: 348px;
     height: 30px;
     border: 0;
     border-radius: 5px;
@@ -174,8 +199,8 @@ ul {
     height: 76vh;
     overflow-y: scroll;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     text-shadow: 1px 1px 1px rgba(13, 13, 13, 0.115);
 }
 
@@ -193,19 +218,19 @@ li {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 21px;
     line-height: 5px;
 }
 
 span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-right: 10px;
 }
 
 li p {
     margin: 7px;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 li #div1 {
@@ -215,6 +240,7 @@ li #div1 {
     align-items: left;
     word-break: break-all;
     word-wrap: break-word;
+    min-height: 100px;
 }
 
 li #div2 {
@@ -225,6 +251,7 @@ li #div2 {
 }
 
 li button {
+    background-color: white;
     padding: 0;
     width: 35px;
     height: 35px;
@@ -234,6 +261,7 @@ li button {
     box-shadow: 1px 1px 5px 1px black;
 }
 li button:hover {
+    background-color: rgb(54, 55, 131);
     box-shadow: 1px 1px 5px 3px rgb(19, 18, 18);
     cursor: pointer;
 }

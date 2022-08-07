@@ -11,7 +11,7 @@
     <body>
         <div id="conteiner">
             <aside>
-                <div>
+                <div class="headBox">
                     <div>
                         <img src="" alt="" />
                         <h1>DEVinKnowledge</h1>
@@ -20,15 +20,34 @@
                 </div>
 
                 <form>
-                    <label for="">Título</label>
-                    <input type="text" id="titulo" class="noEdit" required />
+                    <label for=""> Título</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        class="noEdit"
+                        minlength="8"
+                        maxlength="64"
+                        placeholder="Digite um titulo"
+                        required
+                    />
 
-                    <label for="">Linguagem/Skill</label>
-                    <input type="text" id="linguagem" required />
+                    <label for=""> Linguagem/Skill</label>
+                    <input
+                        type="text"
+                        id="linguagem"
+                        minlength="4"
+                        maxlength="16"
+                        placeholder="Digite uma linguagem ou uma Skill"
+                        required
+                    />
 
-                    <label for="">Categoria</label>
-                    <select name="categorias" id="categoria" required>
-                        <option value=""></option>
+                    <label for=""> Categoria</label>
+                    <select
+                        name="categorias"
+                        id="categoria"
+                        required
+                    >
+                    <option value="" disabled selected>Selecione uma Categoria</option>
                         <option value="FrontEnd">FrontEnd</option>
                         <option value="BackEnd">BackEnd</option>
                         <option value="FullStack">FullStack</option>
@@ -37,11 +56,22 @@
                         </option>
                     </select>
 
-                    <label for="">Descrição</label>
-                    <textarea name="" id="descricao" required></textarea>
+                    <label for=""> Descrição</label>
+                    <textarea
+                        name=""
+                        id="descricao"
+                        minlength="32"
+                        maxlength="512"
+                        placeholder="Escreve aqui o detalhamento da sua Dica"
+                        required
+                    ></textarea>
 
-                    <label for="">Video do YouTube</label>
-                    <input type="url" id="link" required />
+                    <label for=""> Video do YouTube</label>
+                    <input
+                        type="url"
+                        id="link"
+                        placeholder="https://suaurl.com.br"
+                    />
                     <div class="cleanSaveBox">
                         <button class="cleanSaveButton" id="clean" type="reset">
                             Limpar
@@ -80,11 +110,11 @@
                         <input
                             type="text"
                             id="pesquisa"
-                            placeholder="Digite um titulo para pesquisar"
+                            placeholder="Digite um titulo para pesquisar..."
                         />
-                        <button id="pesquisaButton">Pesquisa</button>
-                        <button id="resetPesquisa">Reset</button>
-                        <button id="del">Delete All</button>
+                        <button id="pesquisaButton">Pesquisar</button>
+                        <button id="resetPesquisa">Limpar</button>
+                        <button id="del">Excluir</button>
                     </div>
                 </section>
                 <section class="boxCards">
